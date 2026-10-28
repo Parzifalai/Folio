@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; worker-src 'self' blob:; font-src 'self' data: blob:; connect-src 'self' data: blob:">
+  <title>Folio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="titlebar">
+    <nav class="tabs" id="tabs"></nav>
+    <button class="tb-btn" id="btn-open" data-tip="Новая вкладка · Ctrl+T"></button>
+    <div class="drag"></div>
+    <button class="tb-btn tb-save" id="btn-save" data-tip="Сохранить · Ctrl+S" hidden></button>
+    <button class="tb-btn" id="btn-show" data-tip="Показ на весь экран · F5" hidden></button>
+    <button class="tb-btn" id="btn-split" data-tip="Два документа рядом · Ctrl+\" hidden></button>
+    <button class="tb-btn" id="btn-menu" data-tip="Ещё"></button>
+  </header>
+
+  <main id="stage">
+    <div class="panes" id="panes">
+      <div class="pane" id="pane0"></div>
+      <div class="divider" id="divider"></div>
+      <div class="pane" id="pane1">
+        <div class="pane-empty" id="pane1-empty">
+          <button class="drop" id="drop2">
+            <span class="drop-icon"></span>
+            <span class="drop-text">Откройте второй документ</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <section class="empty" id="empty">
+      <button class="drop" id="drop">
+        <span class="drop-icon"></span>
+        <span class="drop-text">Перетащите файл сюда или нажмите, чтобы открыть</span>
+      </button>
+      <button class="new-doc" id="btn-new"><span class="nd-icon"></span>Новый документ</button>
+      <ul class="recent" id="recent"></ul>
+      <div class="prefs">
+        <button class="pref" id="btn-theme" data-tip="Тема"></button>
+        <button class="pref" id="btn-lang" data-tip="Язык"></button>
+      </div>
+    </section>
+  </main>
+
+  <div class="dropzone" id="dropzone" hidden></div>
+  <div class="tip" id="tip" role="tooltip"></div>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="lib/pdf.min.js"></script>
+  <script src="lib/pdf-lib.min.js"></script>
+  <script src="lib/fontkit.umd.min.js"></script>
+  <script src="lib/jszip.min.js"></script>
+  <script src="i18n.js"></script>
+  <script src="icons.js"></script>
+  <script src="dock.js"></script>
+  <script src="pdf/export.js"></script>
+  <script src="pdf/editor.js"></script>
+  <script src="docx/editor.js"></script>
+  <script src="xlsx/formula.js"></script>
+  <script src="xlsx/numfmt.js"></script>
+  <script src="xlsx/editor.js"></script>
+  <script src="pptx/editor.js"></script>
+  <script src="present.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

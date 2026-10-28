@@ -1,0 +1,23 @@
+{
+  "name": "folio",
+  "productName": "Folio",
+  "version": "1.0.0",
+  "description": "Folio — a minimal desktop editor for PDF, Word, Excel and PowerPoint files",
+  "author": "parzifaal",
+  "license": "MIT",
+  "homepage": "https://github.com/Parzifalai/Folio",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Parzifalai/Folio.git"
+  },
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-packager . Folio --platform=win32 --arch=x64 --electron-version=28.3.3 --icon=build/icon.ico --out=dist --overwrite --asar --electron-zip-dir=build/electron --ignore=\"^/(dist|tools|brand|docs|build/electron|build/icon\\.svg|node_modules)\" --win32metadata.FileDescription=Folio --win32metadata.ProductName=Folio",
+    "update": "node tools/build-asar.mjs"
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.3.0",
+    "electron": "^28.3.3"
+  }
+}
